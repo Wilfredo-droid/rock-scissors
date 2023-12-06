@@ -37,6 +37,7 @@ getPlayerChoice = () => {
 
 playRound = (computerChoice, playerChoice) => {
 
+
     if(computerChoice() === playerChoice()){
         return "TIE !!";
     } //If both choices are equal its a tie
@@ -53,7 +54,7 @@ playRound = (computerChoice, playerChoice) => {
 
 game = () => {
 
-    console.log(playRound(getComputerChoice(), getPlayerChoice()));
+    console.log(playRound(getComputerChoice, getPlayerChoice));
 
 }
 
