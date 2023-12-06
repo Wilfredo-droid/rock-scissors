@@ -12,6 +12,25 @@ getComputerChoice = () => {
 getPlayerChoice = () => {
 
     let playerDecision = prompt("Please choose between\nRock \nPaper \nScissors"); 
+
+    playerDecision = playerDecision.toUpperCase();
+
+    if(playerDecision === "ROCK"){
+        playerDecision = 0; //Changed the string to an integer to fit with the comment and code above
+    }
+
+    else if(playerDecision === "PAPER"){
+        playerDecision = 1;
+    }
+
+    else if(playerDecision === "SCISSORS"){
+        playerDecision = 2;
+    }
+
+    else{
+        alert("Your input was incorrect !!");
+    }
+
     return playerDecision;
 
 }
