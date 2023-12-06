@@ -3,12 +3,19 @@
 
 getComputerChoice = () => {
 
-    let decision = Math.floor(Math.random() * 3) ; 
+    let computerDecision = Math.floor(Math.random() * 3) ; 
 
 
     return decision
 }
 
+getPlayerChoice = () => {
+
+    let playerDecision = +prompt("Please choose between\nRock (1)\nPaper (2)\nScissors (3)") - 1 //Substracted 1 to the prompt so that the player choice is more in line to the comment above
+
+    return playerDecision
+
+}
 
 
 
