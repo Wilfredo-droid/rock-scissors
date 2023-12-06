@@ -6,7 +6,7 @@ getComputerChoice = () => {
     let computerDecision = Math.floor(Math.random() * 3) ; 
 
 
-    return decision;
+    return computerDecision;
 }
 
 getPlayerChoice = () => {
@@ -53,8 +53,10 @@ playRound = (computerChoice, playerChoice) => {
 
 game = () => {
 
-
+    console.log(playRound(getComputerChoice(), getPlayerChoice()));
 
 }
+
+game();
 
 </script>
