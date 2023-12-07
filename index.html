@@ -29,6 +29,8 @@ getPlayerChoice = () => {
 
     else{
         alert("Your input was incorrect !!");
+
+        return;
     }
 
     return playerDecision;
@@ -37,28 +39,30 @@ getPlayerChoice = () => {
 
 playRound = (computerChoice, playerChoice) => {
 
+    debugger
 
-    if(computerChoice() === playerChoice()){
+    if(computerChoice === playerChoice){
         return "TIE !!";
     } //If both choices are equal its a tie
 
-    else if(computerChoice() === 0 && playerChoice === 2 || computerChoice() === 1 && playerChoice() === 0 || computerChoice() === 2 && playerChoice() === 1){
-        return "The CPU has won !!"
+    else if((computerChoice === 0 && playerChoice === 2) || (computerChoice === 1 && playerChoice === 0) || (computerChoice === 2 && playerChoice === 1)){
+        return "The CPU has won !!";
     } //Makes the choice of who wins depending on the numbers ex: if computer choice is equal to one (paper) and player choice is equal to zero (rock) the computer wins, this if assumes the computer wins in all of the cases
 
     else {
-        return "The player has won !!" //In the case that the if is wrong, the player wins
+        return "The player has won !!"; //In the case that the if is wrong, the player wins
     }
 
 } 
 
 game = () => {
 
-    console.log(playRound(getComputerChoice, getPlayerChoice));
-    console.log(playRound(getComputerChoice, getPlayerChoice));
-    console.log(playRound(getComputerChoice, getPlayerChoice));
-    console.log(playRound(getComputerChoice, getPlayerChoice));
-    console.log(playRound(getComputerChoice, getPlayerChoice));
+    console.log(playRound(getComputerChoice(), getPlayerChoice()));
+    console.log(playRound(getComputerChoice(), getPlayerChoice()));
+    console.log(playRound(getComputerChoice(), getPlayerChoice()));
+    console.log(playRound(getComputerChoice(), getPlayerChoice()));
+    console.log(playRound(getComputerChoice(), getPlayerChoice()));
+
 
 
 }
