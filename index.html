@@ -17,6 +17,20 @@
     
 <script>
     //In this game, rock is equal to zero, paper is one and scissors is two
+    let gameOnButton = document.querySelector("#game");
+
+    let buttons = document.querySelectorAll("button");
+
+    let playerDecision;
+
+    buttons.forEach(button => {
+
+        button.addEventListener("click", () => {
+            playerDecision = button.innerText;
+        });
+
+    })
+
     
     let getComputerChoice = () => {
     
@@ -28,19 +42,7 @@
     
     let getPlayerChoice = () => {
     
-        let buttons = document.querySelectorAll("button");
-
-        let playerDecision;
-
-        buttons.forEach(button => {
-
-            button.addEventListener("click", () => {
-                playerDecision = button.innerText;
-            });
-
-        })
-        
-        console.log(playerDecision);
+  
 
         playerDecision = playerDecision.toUpperCase();
     
@@ -82,6 +84,14 @@
     
     } 
     
+    let game = () => {
+
+
+        gameOnButton.addEventListener('click', () => {
+            console.log(playRound(getComputerChoice, getPlayerChoice));
+        });
+
+    }
     
 
     
