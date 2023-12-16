@@ -8,9 +8,9 @@
 
     <h1>ROCK PAPER SCISSORS </h1>
 
-    <button id = "rock">ROCK</button>
-    <button id = "paper">PAPER</button>
-    <button id="scissors">SCISSORS</button>
+    <button id = "rock" class="item">ROCK</button>
+    <button id = "paper" class="item">PAPER</button>
+    <button id="scissors" class="item">SCISSORS</button>
     <button id="game">Play !!</button>
 
 
@@ -19,7 +19,7 @@
     //In this game, rock is equal to zero, paper is one and scissors is two
     let gameOnButton = document.querySelector("#game");
 
-    let buttons = document.querySelectorAll("button");
+    let buttons = document.querySelectorAll(".item");
 
     let playerDecision;
 
@@ -27,11 +27,11 @@
 
         button.addEventListener("click", () => {
             playerDecision = button.innerText;
+
         });
 
     })
 
-    
     let getComputerChoice = () => {
     
         let computerDecision = Math.floor(Math.random() * 3) ; 
@@ -40,10 +40,8 @@
         return computerDecision;
     }
     
-    let getPlayerChoice = () => {
+    let getPlayerChoice = (playerDecision) => {
     
-  
-
         playerDecision = playerDecision.toUpperCase();
     
         if(playerDecision === "ROCK"){
@@ -86,12 +84,13 @@
     
     let game = () => {
 
-
         gameOnButton.addEventListener('click', () => {
             console.log(playRound(getComputerChoice, getPlayerChoice));
         });
 
     }
+
+
     
 
     
