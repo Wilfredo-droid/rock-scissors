@@ -11,13 +11,14 @@
     <button id = "rock">ROCK</button>
     <button id = "paper">PAPER</button>
     <button id="scissors">SCISSORS</button>
+    <button id="game">Play !!</button>
 
 
     
 <script>
     //In this game, rock is equal to zero, paper is one and scissors is two
     
-    getComputerChoice = () => {
+    let getComputerChoice = () => {
     
         let computerDecision = Math.floor(Math.random() * 3) ; 
     
@@ -25,7 +26,7 @@
         return computerDecision;
     }
     
-    getPlayerChoice = () => {
+    let getPlayerChoice = () => {
     
         let buttons = document.querySelectorAll("button");
 
@@ -65,7 +66,7 @@
     
     }
     
-    playRound = (computerChoice, playerChoice) => {
+    let playRound = (computerChoice, playerChoice) => {
     
         if(computerChoice === playerChoice){
             return "TIE !!";
@@ -81,19 +82,8 @@
     
     } 
     
-    game = () => {
     
-        console.log(playRound(getComputerChoice(), getPlayerChoice()));
-        console.log(playRound(getComputerChoice(), getPlayerChoice()));
-        console.log(playRound(getComputerChoice(), getPlayerChoice()));
-        console.log(playRound(getComputerChoice(), getPlayerChoice()));
-        console.log(playRound(getComputerChoice(), getPlayerChoice()));
-    
-    
-    
-    }
-    
-    game();
+
     
 </script>
     
