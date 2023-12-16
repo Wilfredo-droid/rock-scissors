@@ -1,72 +1,90 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>ROCK PAPER SCISSORS </h1>
+
+    <button id = "Rock">ROCK</button>
+    <button id = "Paper">PAPER</button>
+    <button id="Scissors">SCISSORS</button>
+
+
+    
 <script>
-//In this game, rock is equal to zero, paper is one and scissors is two
-
-getComputerChoice = () => {
-
-    let computerDecision = Math.floor(Math.random() * 3) ; 
-
-
-    return computerDecision;
-}
-
-getPlayerChoice = () => {
-
+    //In this game, rock is equal to zero, paper is one and scissors is two
+    
+    getComputerChoice = () => {
+    
+        let computerDecision = Math.floor(Math.random() * 3) ; 
+    
+    
+        return computerDecision;
+    }
+    
+    getPlayerChoice = () => {
+    
+        
     let playerDecision = prompt("Please choose between\nRock \nPaper \nScissors"); 
-
-    playerDecision = playerDecision.toUpperCase();
-
-    if(playerDecision === "ROCK"){
-        playerDecision = 0; //Changed the string to an integer to fit with the comment and code above
+        
+        playerDecision = playerDecision.toUpperCase();
+    
+        if(playerDecision === "ROCK"){
+            playerDecision = 0; //Changed the string to an integer to fit with the comment and code above
+        }
+    
+        else if(playerDecision === "PAPER"){
+            playerDecision = 1;
+        }
+    
+        else if(playerDecision === "SCISSORS"){
+            playerDecision = 2;
+        }
+    
+        else{
+            alert("Your input was incorrect !!");
+    
+            return;
+        }
+    
+        return playerDecision;
+    
     }
-
-    else if(playerDecision === "PAPER"){
-        playerDecision = 1;
+    
+    playRound = (computerChoice, playerChoice) => {
+    
+        if(computerChoice === playerChoice){
+            return "TIE !!";
+        } //If both choices are equal its a tie
+    
+        else if((computerChoice === 0 && playerChoice === 2) || (computerChoice === 1 && playerChoice === 0) || (computerChoice === 2 && playerChoice === 1)){
+            return "The CPU has won !!";
+        } //Makes the choice of who wins depending on the numbers ex: if computer choice is equal to one (paper) and player choice is equal to zero (rock) the computer wins, this if assumes the computer wins in all of the cases
+    
+        else {
+            return "The player has won !!"; //In the case that the if is wrong, the player wins
+        }
+    
+    } 
+    
+    game = () => {
+    
+        console.log(playRound(getComputerChoice(), getPlayerChoice()));
+        console.log(playRound(getComputerChoice(), getPlayerChoice()));
+        console.log(playRound(getComputerChoice(), getPlayerChoice()));
+        console.log(playRound(getComputerChoice(), getPlayerChoice()));
+        console.log(playRound(getComputerChoice(), getPlayerChoice()));
+    
+    
+    
     }
-
-    else if(playerDecision === "SCISSORS"){
-        playerDecision = 2;
-    }
-
-    else{
-        alert("Your input was incorrect !!");
-
-        return;
-    }
-
-    return playerDecision;
-
-}
-
-playRound = (computerChoice, playerChoice) => {
-
-    debugger
-
-    if(computerChoice === playerChoice){
-        return "TIE !!";
-    } //If both choices are equal its a tie
-
-    else if((computerChoice === 0 && playerChoice === 2) || (computerChoice === 1 && playerChoice === 0) || (computerChoice === 2 && playerChoice === 1)){
-        return "The CPU has won !!";
-    } //Makes the choice of who wins depending on the numbers ex: if computer choice is equal to one (paper) and player choice is equal to zero (rock) the computer wins, this if assumes the computer wins in all of the cases
-
-    else {
-        return "The player has won !!"; //In the case that the if is wrong, the player wins
-    }
-
-} 
-
-game = () => {
-
-    console.log(playRound(getComputerChoice(), getPlayerChoice()));
-    console.log(playRound(getComputerChoice(), getPlayerChoice()));
-    console.log(playRound(getComputerChoice(), getPlayerChoice()));
-    console.log(playRound(getComputerChoice(), getPlayerChoice()));
-    console.log(playRound(getComputerChoice(), getPlayerChoice()));
-
-
-
-}
-
-game();
-
+    
+    game();
+    
 </script>
+    
+</body>
+</html>
