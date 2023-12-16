@@ -27,8 +27,17 @@
     
     getPlayerChoice = () => {
     
-        
-    let playerDecision = prompt("Please choose between\nRock \nPaper \nScissors"); 
+        let buttons = document.querySelectorAll("button");
+
+        let playerDecision;
+
+        buttons.forEach(button => {
+
+            button.addEventListener("click", () => {
+                playerDecision = button.innerText;
+            });
+
+        })
         
         playerDecision = playerDecision.toUpperCase();
     
